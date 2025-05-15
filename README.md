@@ -1,2 +1,2 @@
-# HIV-Hospital
-Project LT Java Ca 2
+# HIV Treatment and Medical Services System
+Phần mềm dịch vụ y tế và điều trị HIV
