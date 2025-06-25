@@ -1,0 +1,272 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+            min-height: 100vh;
+        }
+         .container {
+        display: flex;
+        width: 100%;
+    }
+    .sidebar {
+        width: 120px;
+        background: #e3f2fd;
+        color: #1976d2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.08);
+        border-right: 2px solid #bbdefb;
+    }
+
+    .sidebar-item {
+        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        transition: background 0.3s;
+        background: transparent;
+    }
+
+    .sidebar-item:hover {
+        background: #bbdefb;
+        color: #1565c0;
+    }
+
+    .sidebar-item .material-icons {
+        font-size: 36px;
+        color: inherit;
+    }
+
+    .sidebar-item a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .main-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+        min-height: 100vh;
+    }
+
+    .navbar {
+        background: linear-gradient(135deg, #2196f3, #1976d2);
+        color: white;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 10;
+    }
+
+    .navbar-left .nav-brand {
+        font-weight: bold;
+        font-size: 1.5em;
+        background: rgba(255,255,255,0.18);
+        padding: 10px 28px;
+        border-radius: 30px;
+        color: white;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+        display: inline-block;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-size: 19px;
+    }
+
+    .nav-links li {
+        margin-left: 40px; 
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600; 
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #e0e0e0;
+    }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-right .material-icons {
+        font-size: 28px; 
+        margin-left: 15px;
+        cursor: pointer;
+        color: white;
+    }
+
+         .footer {
+        width: 100%;
+        background: #85c1ee;
+        color: #000;
+        display: flex;
+        align-items: center; 
+        border: none;
+        padding: 0;
+        position: relative;
+        z-index: 10;
+        padding: 15px 20px;
+    }
+    .footer-container {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        box-sizing: border-box;
+        padding-left: 120px; /* Để tránh dính vào sidebar */
+    }
+    .footer-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 0;
+        height: 100%;
+    }
+    .footer-logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+        letter-spacing: 2px;
+        text-align: left;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .footer-right {
+        flex: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        text-align: right;
+        padding-right: 48px;
+        height: 100%;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .footer-links {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 0;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+    .footer-icon .material-icons {
+        font-size: 1.7em;
+        color: #000;
+        transition: color 0.2s;
+        cursor: pointer;
+        background: none;
+        border-radius: 50%;
+        line-height: 1;
+    }
+    .footer-icon .fa-github {
+        font-size: 1.7em;
+        color: #000;
+        transition: color 0.2s;
+        cursor: pointer;
+        background: none;
+        border-radius: 50%;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .footer-icon:hover .material-icons,
+    .footer-icon:hover .fa-github {
+        color: #1976d2;
+    }
+    .footer-support {
+        color: #000;
+        font-size: 1em;
+        text-align: right;
+        margin-bottom: 0;
+        line-height: 1;
+        margin-top: 0;
+        white-space: nowrap;
+    }
+    .footer-copyright {
+        text-align: right;
+        color: #000;
+        font-size: 1em;
+        margin-bottom: 0;
+        line-height: 1;
+        margin-top: 0;
+        white-space: nowrap;
+        margin-left: 0;
+    }
+        /* Form styles */
+       h2 {
+      text-align: center;
+      color: #1c2b5a;
+      font-size: 32px;
+      margin-top: 20px;
+      margin-bottom: 24px;
+    }
+        .form-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-bottom: 5px;
+            display: block;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #5B8FF9;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #4a8bd6;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
