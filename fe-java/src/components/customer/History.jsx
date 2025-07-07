@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../assests/Blog.css';
+import '../../assests/History.css';
 
-const Blog = () => {
+const History = () => {
     const [userInfo, setUserInfo] = useState({ name: 'Guest' });
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -51,7 +51,7 @@ const Blog = () => {
                     )}
                 </div>
             </nav>
-        
+            
             <div className="container">
                 <aside className="sidebar">
                     <div className="sidebar-item">
@@ -76,71 +76,71 @@ const Blog = () => {
                         <Link to="/history"><i className="material-icons">history</i></Link>
                     </div>
                 </aside>
-        
+            
                 <main className="main-content">
-                    <h2>Blog chia sẻ bệnh nhân</h2>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">H</div>
-                                <div>
-                                    <div className="author-name">Hà Thị Mai</div>
-                                </div>
-                            </div>
-                            <div className="date">20/05/2025</div>
-                        </div>
-                        <div className="post-title"><a href="#">Hành trình vượt qua mặc cảm và kì thị</a></div>
-                        <div className="post-content">
-                            Tôi muốn chia sẻ câu chuyện của mình để mọi người hiểu hơn về những khó khăn, nỗi đau khi sống chung với HIV và làm sao tôi tìm được niềm tin và sự yêu thương từ gia đình cũng như cộng đồng.
-                            Điều quan trọng là đừng để kỳ thị làm mình gục ngã, hãy tự tin và tin rằng bạn xứng đáng được hạnh phúc và chăm sóc tốt nhất.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">T</div>
-                                <div>
-                                    <div className="author-name">Trần Văn Nam</div>
-                                </div>
-                            </div>
-                            <div className="date">15/05/2025</div>
-                        </div>
-                        <div className="post-title"><a href="#">Chia sẻ kinh nghiệm giữ gìn sức khỏe khi điều trị</a></div>
-                        <div className="post-content">
-                            Trong quá trình điều trị HIV, tôi đã học cách duy trì chế độ ăn uống lành mạnh, luyện tập thể dục đều đặn và giữ tinh thần lạc quan. Điều này giúp tôi có sức khỏe tốt và ít gặp tác dụng phụ từ thuốc.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">M</div>
-                                <div>
-                                    <div className="author-name">Nguyễn Quốc Minh</div>
-                                </div>
-                            </div>
-                            <div className="date">12/05/2025</div>
-                        </div>
-                        <div className="post-title"><a href="#">Vượt qua HIV để sống khỏe mạnh và có ích</a></div>
-                        <div className="post-content">
-                            Tôi một người trẻ tuổi đầy nghị lực, phát hiện nhiễm HIV cách đây 5 năm. Thay vì gục ngã, Tôi đã chọn đối mặt và tìm kiếm sự hỗ trợ.
-                            Qua quá trình điều trị ARV đều đặn và nhận được sự động viên, tư vấn nhiệt tình từ đội ngũ bác sĩ cùng tình yêu thương từ gia đình, Tôi không chỉ vượt qua khó khăn mà còn sống khỏe mạnh, tích cực.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">N</div>
-                                <div>
-                                    <div className="author-name">Lê Thùy Nga</div>
-                                </div>
-                            </div>
-                            <div className="date">07/05/2025</div>
-                        </div>
-                        <div className="post-title"><a href="#">Hành trình điều trị ARV</a></div>
-                        <div className="post-content">
-                            Tôi đã trải qua nhiều khó khăn khi mới bắt đầu điều trị ARV, từ những tác dụng phụ như mệt mỏi, buồn nôn đến cảm giác lo sợ và mất niềm tin.
-                            Việc tuân thủ đúng phác đồ điều trị không chỉ giúp tôi giữ vững sức khỏe mà còn mang lại sự bình yên trong tâm hồn.
-                        </div>
+                    <h2>THEO DÕI LỊCH SỬ KHÁM BỆNH</h2>
+                    <div className="history-section-title">Bảng lịch sử khám bệnh</div>
+                    <div className="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ngày khám</th>
+                                    <th>Bác sĩ phụ trách</th>
+                                    <th>Triệu chứng ghi nhận</th>
+                                    <th>Xét nghiệm đã thực hiện</th>
+                                    <th>Kê đơn thuốc</th>
+                                    <th>Đánh giá từ bác sĩ</th>
+                                    <th>Ghi chú</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01/01/2024</td>
+                                    <td>THẾ</td>
+                                    <td>Mệt mỏi kéo dài</td>
+                                    <td>CD4: 280 cells/mm³ (thấp)</td>
+                                    <td>Tenofovir Disoproxil Fumarate (TDF)</td>
+                                    <td>Nhiễm HIV giai đoạn sớm</td>
+                                    <td>Bắt đầu điều trị ARV</td>
+                                </tr>
+                                <tr>
+                                    <td>01/03/2024</td>
+                                    <td>HIỀN</td>
+                                    <td>Xuất hiện hạch cổ bên phải (kích thước ~1cm)</td>
+                                    <td>Tải lượng HIV (VL): 18,000 copies/mL</td>
+                                    <td>Lamivudine (3TC)</td>
+                                    <td>Chưa có biểu hiện tổn thương cơ nội</td>
+                                    <td>Được tư vấn thêm về việc ngủ nghỉ</td>
+                                </tr>
+                                <tr>
+                                    <td>01/06/2024</td>
+                                    <td>BÌNH</td>
+                                    <td>Hay sốt nhẹ vào chiều</td>
+                                    <td>HIV kháng nguyên/kháng thể combo test: Dương tính</td>
+                                    <td>Dolutegravir (DTG)</td>
+                                    <td>Chưa có tổn thương cơ quan, cần tái khám sớm</td>
+                                    <td>Tải lượng virus đang có xu hướng tăng</td>
+                                </tr>
+                                <tr>
+                                    <td>01/09/2024</td>
+                                    <td>KÍNH</td>
+                                    <td>Ăn kém, chán ăn</td>
+                                    <td>Xét nghiệm lao: Âm tính</td>
+                                    <td>Zidovudine (AZT)</td>
+                                    <td>Chưa đủ chỉ số chẩn đoán AIDS</td>
+                                    <td>Theo dõi chức năng gan thận</td>
+                                </tr>
+                                <tr>
+                                    <td>01/01/2025</td>
+                                    <td>HIỀN</td>
+                                    <td>Ngủ hay thức dậy, đau đầu tăng</td>
+                                    <td>Xét nghiệm chức năng gan thận: Bình thường</td>
+                                    <td>Lopinavir/Ritonavir (LPV/r)</td>
+                                    <td>Giai đoạn ổn định, đáp ứng thuốc tốt</td>
+                                    <td>Tư vấn thêm liệu pháp tâm lý</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </main>
             </div>
@@ -172,4 +172,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default History;
