@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import '../../assests/Blog.css';
+import '../../assests/Document.css';
+import HIVImage from '../../assests/HIV.jpg';
+import GiamKyThiImage from '../../assests/giamkithi.jpg';
+import YteImage from '../../assests/yte.jpg';
+import ARVttImage from '../../assests/ARV tt.jpeg';
 
-const Blog = () => {
+const Document = () => {
     const [userInfo, setUserInfo] = useState({ name: 'Guest' });
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -51,7 +55,7 @@ const Blog = () => {
                     )}
                 </div>
             </nav>
-        
+
             <div className="container">
                 <aside className="sidebar">
                     <div className="sidebar-item">
@@ -76,70 +80,49 @@ const Blog = () => {
                         <Link to="/history"><i className="material-icons">history</i></Link>
                     </div>
                 </aside>
-        
+
                 <main className="main-content">
-                    <h2>Blog chia sẻ bệnh nhân</h2>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">H</div>
-                                <div>
-                                    <div className="author-name">Hà Thị Mai</div>
-                                </div>
+                    <h2 className="main-title">Tài liệu giáo dục</h2>
+                    <div className="card-list">
+                        <div className="card">
+                           <img src={HIVImage} alt="Giảm kỳ thị" className="card-img" />
+                            <div className="card-content">
+                                <h2 className="card-title">Hiểu đúng về HIV/AIDS</h2>
+                                <p className="card-desc">Tài liệu giúp bạn hiểu rõ HIV là gì, cách lây truyền, và cách phòng tránh đúng cách để bảo vệ bản thân và cộng đồng.</p>
+                                <a href="https://www.vinmec.com/vie/bai-viet/hiv-va-aids-nhung-dieu-ban-can-nho-vi">
+                                    <button className="card-btn">Xem chi tiết »</button>
+                                </a>
                             </div>
-                            <div className="date">20/05/2025</div>
                         </div>
-                        <div className="post-title"><a href="#">Hành trình vượt qua mặc cảm và kì thị</a></div>
-                        <div className="post-content">
-                            Tôi muốn chia sẻ câu chuyện của mình để mọi người hiểu hơn về những khó khăn, nỗi đau khi sống chung với HIV và làm sao tôi tìm được niềm tin và sự yêu thương từ gia đình cũng như cộng đồng.
-                            Điều quan trọng là đừng để kỳ thị làm mình gục ngã, hãy tự tin và tin rằng bạn xứng đáng được hạnh phúc và chăm sóc tốt nhất.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">T</div>
-                                <div>
-                                    <div className="author-name">Trần Văn Nam</div>
-                                </div>
+                        <div className="card">
+                            <img src={GiamKyThiImage} alt="Giảm kỳ thị" className="card-img" />
+                            <div className="card-content">
+                                <h2 className="card-title">Giảm kỳ thị & Phân biệt đối xử người nhiễm HIV</h2>
+                                <p className="card-desc">Hướng dẫn các cách tiếp cận tích cực nhằm giảm kỳ thị, giúp người nhiễm HIV hòa nhập cộng đồng nâng cao chất lượng cuộc sống.</p>
+                                <a href="https://yte.nghean.gov.vn/tin-chuyen-nganh/giam-ky-thi-voi-hiv-don-bay-huong-toi-ket-thuc-dai-dich-aids-vao-nam-2030-606319">
+                                    <button className="card-btn">Xem chi tiết »</button>
+                                </a>
                             </div>
-                            <div className="date">15/05/2025</div>
                         </div>
-                        <div className="post-title"><a href="#">Chia sẻ kinh nghiệm giữ gìn sức khỏe khi điều trị</a></div>
-                        <div className="post-content">
-                            Trong quá trình điều trị HIV, tôi đã học cách duy trì chế độ ăn uống lành mạnh, luyện tập thể dục đều đặn và giữ tinh thần lạc quan. Điều này giúp tôi có sức khỏe tốt và ít gặp tác dụng phụ từ thuốc.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">M</div>
-                                <div>
-                                    <div className="author-name">Nguyễn Quốc Minh</div>
-                                </div>
+                        <div className="card">
+                            <img src={YteImage} alt="Chăm sóc sức khỏe" className="card-img" />
+                            <div className="card-content">
+                                <h2 className="card-title">Chăm sóc sức khỏe cho người nhiễm HIV</h2>
+                                <p className="card-desc">Tài liệu hướng dẫn chế độ dinh dưỡng, luyện tập và cách theo dõi sức khỏe để hỗ trợ điều trị hiệu quả cho người nhiễm HIV.</p>
+                                <a href="https://hiv.com.vn/thuoc-dieu-tri-hiv/luu-y-cham-soc-dieu-tri-cho-nguoi-nhiem-hiv-aids-449483">
+                                    <button className="card-btn">Xem chi tiết »</button>
+                                </a>
                             </div>
-                            <div className="date">12/05/2025</div>
                         </div>
-                        <div className="post-title"><a href="#">Vượt qua HIV để sống khỏe mạnh và có ích</a></div>
-                        <div className="post-content">
-                            Tôi một người trẻ tuổi đầy nghị lực, phát hiện nhiễm HIV cách đây 5 năm. Thay vì gục ngã, Tôi đã chọn đối mặt và tìm kiếm sự hỗ trợ.
-                            Qua quá trình điều trị ARV đều đặn và nhận được sự động viên, tư vấn nhiệt tình từ đội ngũ bác sĩ cùng tình yêu thương từ gia đình, Tôi không chỉ vượt qua khó khăn mà còn sống khỏe mạnh, tích cực.
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post-header">
-                            <div className="author-date">
-                                <div className="avatar">N</div>
-                                <div>
-                                    <div className="author-name">Lê Thùy Nga</div>
-                                </div>
+                        <div className="card">
+                            <img src={ARVttImage} alt="Lợi ích của ARV" className="card-img" />
+                            <div className="card-content">
+                                <h2 className="card-title" style={{ marginLeft: '20px' }}>Lợi ích của ARV</h2>
+                                <p className="card-desc">Tài liệu cung cấp kiến thức về lợi ích của thuốc ARV trong việc kiểm soát HIV, kéo dài tuổi thọ và giảm nguy cơ lây truyền cho người khác.</p>
+                                <a href="https://www.pharmacity.vn/dieu-tri-arv-hieu-qua-phac-do-chuan-tac-dung-phu-can-biet.htm">
+                                    <button className="card-btn">Xem chi tiết »</button>
+                                </a>
                             </div>
-                            <div className="date">07/05/2025</div>
-                        </div>
-                        <div className="post-title"><a href="#">Hành trình điều trị ARV</a></div>
-                        <div className="post-content">
-                            Tôi đã trải qua nhiều khó khăn khi mới bắt đầu điều trị ARV, từ những tác dụng phụ như mệt mỏi, buồn nôn đến cảm giác lo sợ và mất niềm tin.
-                            Việc tuân thủ đúng phác đồ điều trị không chỉ giúp tôi giữ vững sức khỏe mà còn mang lại sự bình yên trong tâm hồn.
                         </div>
                     </div>
                 </main>
@@ -172,4 +155,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default Document;

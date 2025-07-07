@@ -1,8 +1,32 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import '../../assests/Appointment.css'; 
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../../assests/Appointment.css';
 
 const Appointment = () => {
+    const [userInfo, setUserInfo] = useState({ name: 'Guest' });
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const loggedStatus = localStorage.getItem('isLoggedIn') === 'true';
+        if (loggedStatus) {
+            setIsLoggedIn(true);
+            const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (storedUserInfo && (storedUserInfo.name || storedUserInfo.firstName || storedUserInfo.username || storedUserInfo.email)) {
+                setUserInfo({
+                    name: storedUserInfo.name ||
+                          (storedUserInfo.firstName && storedUserInfo.lastName ? `${storedUserInfo.lastName} ${storedUserInfo.firstName}` : storedUserInfo.firstName) ||
+                          storedUserInfo.username ||
+                          (storedUserInfo.email ? storedUserInfo.email.split('@')[0] : 'Người dùng')
+                });
+            } else {
+                setUserInfo({ name: 'Người dùng' });
+            }
+        } else {
+            setIsLoggedIn(false);
+            setUserInfo({ name: 'Guest' });
+        }
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const date = document.getElementById('date').value;
@@ -36,58 +60,59 @@ const Appointment = () => {
                 ? `<span style="color:#e53935;">Bạn đã đặt lịch ẩn danh.<br>Mã tra cứu của bạn là: <b>${code}</b></span>`
                 : '');
 
-        // Reset form after booking
         document.getElementById('bookingForm').reset();
     };
 
     return (
-          <>
-               {/* Navbar Section */}
-               <nav className="navbar">
-                 <div className="navbar-left">
-                   <span className="nav-brand">HIV - MTSS</span>
-                 </div>
-                 <ul className="nav-links">
+        <>
+            <nav className="navbar">
+                <div className="navbar-left">
+                    <span className="nav-brand">HIV - MTSS</span>
+                </div>
+                <ul className="nav-links">
                     <li><Link to="/homecustomer">Trang chủ</Link></li>
                     <li><Link to="/document">Tài liệu</Link></li>
                     <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/service">Dịch vụ</Link></li> {/* This links to the current component */}
+                    <li><Link to="/service">Dịch vụ</Link></li>
                     <li><Link to="/result">Kết quả</Link></li>
-                 </ul>
-                 <div className="navbar-right">
-                   <Link to="/personal"><i className="material-icons">account_circle</i></Link>
-                   <i className="material-icons">arrow_drop_down</i>
-                 </div>
-               </nav>
-         
-               {/* Main Content & Sidebar Container */}
-               <div className="container">
-                              {/* Sidebar Section */}
-                              <aside className="sidebar">
-                                <div className="sidebar-item">
-                                  <Link to="/appointment2"><i className="material-icons">calendar_today</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/lookup"><i className="material-icons">assignment</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/appointment"><i className="material-icons">calendar_month</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/advise"><i className="material-icons">chat_bubble_outline</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/remind"><i className="material-icons">access_time</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/patient"><i className="material-icons">description</i></Link>
-                                </div>
-                                <div className="sidebar-item">
-                                  <Link to="/history"><i className="material-icons">history</i></Link>
-                                </div>
-                              </aside>
-         
-
+                </ul>
+                <div className="navbar-right">
+                    {isLoggedIn && userInfo.name ? (
+                        <>
+                            <span className="user-name-display">{userInfo.name}</span>
+                            <Link to="/personal"><i className="material-icons">account_circle</i></Link>
+                        </>
+                    ) : (
+                        <Link to="/register" title="Đăng nhập / Đăng ký"><i className="material-icons">person_add</i></Link>
+                    )}
+                </div>
+            </nav>
+        
+            <div className="container">
+                <aside className="sidebar">
+                    <div className="sidebar-item">
+                        <Link to="/appointment2"><i className="material-icons">calendar_today</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/lookup"><i className="material-icons">assignment</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/appointment"><i className="material-icons">calendar_month</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/advise"><i className="material-icons">chat_bubble_outline</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/remind"><i className="material-icons">access_time</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/patient"><i className="material-icons">description</i></Link>
+                    </div>
+                    <div className="sidebar-item">
+                        <Link to="/history"><i className="material-icons">history</i></Link>
+                    </div>
+                </aside>
+        
                 <main className="main-content">
                     <h2>ĐẶT LỊCH HẸN</h2>
                     <div className="form-container">
@@ -152,7 +177,7 @@ const Appointment = () => {
                     </div>
                 </div>
             </footer>
-       </>
+        </>
     );
 };
 
