@@ -1,0 +1,359 @@
+
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    border-bottom: none;
+    height: auto;
+}
+
+.navbarLeft .navBrand, .navBrand { /* Chú ý: .navBrand trong .navbarLeft và .navBrand riêng biệt */
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+    margin: 0;
+}
+
+.navLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+    gap: 40px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLinks li {
+    margin-left: 0;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    padding: 8px 0;
+    border-radius: 4px;
+}
+
+.navLinks a:hover {
+    color: #e0e0e0;
+    background: none;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.navbarRight .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Main Container and Sidebar */
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 320px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh; /* Có thể cần điều chỉnh nếu bạn có footer cố định */
+    justify-content: flex-start;
+}
+
+.sidebarMenuBox {
+    width: 70%;
+    background: #fff;
+    border-radius: 20px;
+    margin: 32px 0 0 0;
+    box-shadow: 0 8px 32px rgba(33,150,243,0.13);
+    overflow: hidden;
+}
+
+.sidebarTitle {
+    background: #9c27b0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    padding: 22px 0 18px 0;
+    letter-spacing: 1px;
+    border-radius: 20px 20px 0 0;
+}
+
+.sidebarMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+}
+
+.sidebarLink {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 32px;
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: none;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.sidebarLink:last-child {
+    border-bottom: none;
+}
+
+.sidebarLink.active,
+.sidebarLink.selected,
+.sidebarLink:focus {
+    background: #fff; /* Có thể thay đổi nếu bạn muốn màu active khác */
+    color: #222; /* Có thể thay đổi nếu bạn muốn màu active khác */
+    font-weight: 500;
+}
+
+.sidebarLink:hover {
+    background: #f5f5f5;
+    color: #1976d2;
+    font-weight: bold;
+}
+
+/* Footer styles */
+.footer {
+    width: 100%;
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+}
+
+.footerContainer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px; /* Để tránh dính vào sidebar */
+}
+
+.footerLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+
+.footerLogo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.footerRight {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.footerIcon .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.footerIcon .fa-github {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerIcon:hover .material-icons,
+.footerIcon:hover .fa-github {
+    color: #1976d2;
+}
+
+.footerSupport {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.footerCopyright {
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* Blog content styles */
+.content h2 {
+    text-align: center;
+    color: #1c2b5a;
+    font-size: 32px;
+    margin-top: 45px;
+    margin-bottom: 24px;
+}
+
+.post {
+    background: white;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 700px;
+    padding: 20px 24px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-left: 6px solid #c3d3f5;
+    transition: ease-in-out 0.3s;
+}
+
+.post:hover {
+    transform: scale(1.02); /* Đổi scale thành transform: scale */
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.postHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    background-color: #5b68cd;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.authorDate {
+    display: flex;
+    align-items: center;
+}
+
+.authorName {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.date {
+    font-size: 13px;
+    color: gray;
+}
+
+.postTitle {
+    color: #1c2b5a;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0 10px;
+}
+
+.postContent {
+    font-size: 17px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.postTitle a {
+    text-decoration: none;
+    color: #2d4fc4;
+}

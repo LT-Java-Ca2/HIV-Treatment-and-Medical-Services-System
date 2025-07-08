@@ -1,0 +1,420 @@
+/* Docu.module.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.mainContent { /* Changed from main-content */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* Updated to target navBrand directly as navbarLeft is just a container */
+.navBrand { /* Changed from .navbar-left .nav-brand */
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+}
+
+.navLinks { /* Changed from nav-links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+}
+
+.navLinks li {
+    margin-left: 40px;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: #e0e0e0;
+}
+
+.navbarRight { /* Changed from navbar-right */
+    display: flex;
+    align-items: center;
+}
+
+.navbarRight .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.footer {
+    width: 1473px; /* Cân nhắc sử dụng width: 100%; và max-width thay vì fixed width */
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+}
+
+.footerContainer { /* Changed from footer-container */
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px; /* Để tránh dính vào sidebar */
+}
+
+.footerLeft { /* Changed from footer-left */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+
+.footerLogo { /* Changed from footer-logo */
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.footerRight { /* Changed from footer-right */
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footerLinks { /* Changed from footer-links */
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.footerIcon .material-icons { /* Selector remains the same as it targets a global class inside a module class */
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.footerIcon .fa-github { /* Selector remains the same */
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerIcon:hover .material-icons,
+.footerIcon:hover .fa-github {
+    color: #1976d2;
+}
+
+.footerSupport { /* Changed from footer-support */
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.footerCopyright { /* Changed from footer-copyright */
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* Form styles */
+h2 {
+    text-align: center;
+    color: #1c2b5a;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.docProfileCard { /* Changed from doc-profile-card */
+    background: linear-gradient(135deg, #e0f7fa 0%, #b3e0ff 100%);
+    border-radius: 20px;
+    padding: 40px 40px 30px 40px;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.docSectionTitle { /* Changed from doc-section-title */
+    color: #1976d2;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.cardList { /* Changed from card-list */
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 32px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    align-items: stretch;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(33, 150, 243, 0.10);
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex-shrink: 0;
+    min-width: 270px;
+    max-width: 270px;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
+}
+
+.cardImg { /* Changed from card-img */
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.cardContent { /* Changed from card-content */
+    padding: 18px 18px 20px 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 220px;
+    justify-content: flex-end;
+}
+
+.cardTitle { /* Changed from card-title */
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a237e;
+}
+
+.cardDesc { /* Changed from card-desc */
+    font-size: 15px;
+    padding: 10px 20px;
+    margin-top: 0px;
+}
+
+.cardBtn { /* Changed from card-btn */
+    background: #2635c7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.cardBtn:hover {
+    background: #1a237e;
+}
+
+@media (max-width: 1200px) {
+    .cardList {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .docProfileCard {
+        padding: 18px 8px;
+    }
+    .cardList {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: unset;
+    }
+    .card {
+        width: 90vw;
+        min-width: 260px;
+        max-width: 100%;
+    }
+}
+
+.mainContainer { /* Changed from main-container */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 320px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    justify-content: flex-start;
+    margin-left: -130px;
+}
+
+.sidebarMenuBox { /* Changed from sidebar-menu-box */
+    width: 225px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 32px 0 0 0;
+    box-shadow: 0 8px 32px rgba(33,150,243,0.13);
+}
+
+.sidebarTitle { /* Changed from sidebar-title */
+    background: #9c27b0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    padding: 22px 0 18px 0;
+    letter-spacing: 1px;
+    border-radius: 20px 20px 0 0;
+}
+
+.sidebarMenu { /* Changed from sidebar-menu */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+}
+
+.sidebarLink { /* Changed from sidebar-link */
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 32px;
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: none;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none; /* Added for Link components */
+}
+
+.sidebarLink:last-child {
+    border-bottom: none;
+}
+
+.sidebarLink.active,
+.sidebarLink.selected,
+.sidebarLink:focus {
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+}
+
+.sidebarLink:hover {
+    background: #f5f5f5;
+    color: #1976d2;
+    font-weight: bold;
+}

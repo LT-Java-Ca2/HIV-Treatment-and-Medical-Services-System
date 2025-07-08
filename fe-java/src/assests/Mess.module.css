@@ -1,0 +1,584 @@
+
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbarLeft .navBrand {
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+}
+
+.navLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+}
+
+.navLinks li {
+    margin-left: 40px;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: #e0e0e0;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+}
+
+.navbarRight .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+}
+
+.footerContainer {
+    width: 100%;
+    margin: 0; /* Changed from '0 auto' */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Changed from 'space-between' */
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px; /* Specific padding added */
+}
+
+.footerLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0; /* Changed from '20px' */
+    height: 100%;
+}
+
+.footerLogo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.footerRight {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px; /* Specific padding added */
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.footerIcon .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+/* For FontAwesome GitHub icon */
+.footerIcon svg { /* Targeting FontAwesome SVG directly */
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerIcon:hover .material-icons,
+.footerIcon:hover svg { /* Apply hover to both Material and FontAwesome icons */
+    color: #1976d2;
+}
+
+.footerSupport {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.footerCopyright {
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #1c5a41;
+    font-size: 32px;
+    margin-top: 45px;
+    margin-bottom: 24px;
+}
+
+/* Container & Sidebar Layout */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: none;
+    padding-top: 64px; /* Space for fixed navbar */
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.sidebar {
+    width: 320px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh; /* Adjust height for scrolling if content is long */
+    justify-content: flex-start;
+}
+
+.sidebarMenuBox {
+    width: 70%;
+    background: #fff;
+    border-radius: 20px;
+    margin: 32px 0 0 0;
+    box-shadow: 0 8px 32px rgba(33,150,243,0.13);
+    overflow: hidden;
+}
+
+.sidebarTitle {
+    background: #9c27b0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    padding: 22px 0 18px 0;
+    letter-spacing: 1px;
+    border-radius: 20px 20px 0 0;
+}
+
+.sidebarMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+}
+
+.sidebarLink {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 32px;
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: none;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+}
+
+.sidebarLink:last-child {
+    border-bottom: none;
+}
+
+.sidebarLink:hover {
+    background: #f5f5f5;
+    color: #1976d2;
+    font-weight: bold;
+}
+
+/* Main Content Area */
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    min-height: calc(100vh - 64px); /* Adjust based on navbar height */
+    padding: 0;
+}
+
+.chatContainer { /* Renamed from .content-section for chat */
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    background: linear-gradient(135deg, #fafdff 60%, #e6e6fa 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(33,150,243,0.10);
+    padding: 0; /* No padding here as the inner content has it */
+    display: flex; /* Changed from display:none in previous version, to flex here for chat */
+    flex-direction: column;
+    min-height: 600px;
+    border: 1.5px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+/* New: General content section. If other sections (Overview, Patients, etc.) use this,
+   they should have padding. The chat-container specifically removes this general padding. */
+.contentSection {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    background: linear-gradient(135deg, #fafdff 60%, #e6e6fa 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(33,150,243,0.10);
+    padding: 20px; /* Default padding for other content sections */
+    min-height: 600px;
+    border: 1.5px solid #e0e0e0;
+    box-sizing: border-box;
+}
+
+.contentSection h2 {
+    margin-top: 0;
+}
+
+/* Chat Specific Styles */
+.chatContent {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    min-height: 400px;
+    padding: 0; /* Padding removed, as per original */
+}
+
+.patientList {
+    width: 320px;
+    background: none;
+    border-radius: 12px 0 0 12px;
+    border-right: 2px solid #2196f3;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 17px;
+    font-weight: 500;
+    color: #222;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto; /* Make patient list scrollable */
+}
+
+.patientListHeader {
+    background: #2196f3;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 16px 0;
+    text-align: center;
+    border-radius: 12px 0 0 0;
+    letter-spacing: 1px;
+    position: sticky; /* Keep header visible when scrolling list */
+    top: 0;
+    z-index: 1;
+}
+
+.patientListItem {
+    padding: 18px 24px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.2s;
+
+}
+
+.patientListItem:last-child {
+    border-bottom: none;
+}
+
+.patientListItem.active,
+.patientListItem:hover {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.chatArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    border-radius: 0 12px 12px 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.chatHeader {
+    background: #2196f3;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 16px 0;
+    text-align: center;
+    border-radius: 0 12px 0 0;
+    letter-spacing: 1px;
+}
+
+.messages {
+    flex: 1;
+    padding: 32px 32px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow-y: auto;
+    min-height: 260px;
+    background: #fff;
+}
+
+.message {
+    max-width: 70%;
+    padding: 14px 22px;
+    border-radius: 22px;
+    font-size: 1.1em;
+    font-weight: 500;
+    word-break: break-word;
+    line-height: 1.5;
+    background: #b2f1fb;
+    color: #222;
+    align-self: flex-start; /* Default for patient messages */
+}
+
+.message.doctorMessage { /* Renamed for clarity in JSX */
+    background: #b39ddb;
+    color: #fff;
+    align-self: flex-end; /* Doctor messages align to the right */
+}
+
+.chatInputArea {
+    display: flex;
+    align-items: center;
+    padding: 18px 24px;
+    border-top: 1.5px solid #e0e0e0;
+    background: #fff;
+    border-radius: 0 0 12px 12px;
+}
+
+.chatInput {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 18px;
+    border: 1.5px solid #e0e0e0;
+    font-size: 1.1em;
+    outline: none;
+    margin-right: 18px;
+    background: #fafcff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.chatInput:focus {
+    border: 1.5px solid #2196f3;
+}
+
+.sendBtn {
+    background: linear-gradient(135deg, #a259f7 0%, #6e00ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 28px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(162,89,247,0.08);
+    width: 90px;
+    margin-top: 2px;
+}
+
+.sendBtn:hover {
+    background: linear-gradient(135deg, #6e00ff 0%, #a259f7 100%);
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    .chatContainer {
+        max-width: 100vw;
+    }
+    .patientList {
+        width: 180px;
+    }
+    .container {
+        max-width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        max-width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        width: 100vw;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #bbdefb;
+        padding: 0;
+        justify-content: center;
+    }
+    .sidebarMenuBox { /* Adjust for mobile layout */
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .sidebarTitle {
+        display: none;
+    }
+    .sidebarMenu {
+        flex-direction: row;
+        gap: 0;
+        justify-content: center; /* Center buttons horizontally */
+        overflow-x: auto; /* Enable horizontal scrolling if buttons don't fit */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+    .sidebarLink {
+        width: auto;
+        padding: 12px 10px;
+        border-radius: 0;
+        border-left: none;
+        border-bottom: 5px solid transparent; /* Highlight active with bottom border */
+        white-space: nowrap; /* Prevent text wrapping in buttons */
+    }
+    .sidebarLink.active,
+    .sidebarLink:hover {
+        border-left: none;
+        border-bottom: 5px solid #1976d2;
+        background: #fff; /* Keep background white when active/hover on mobile */
+        color: #1976d2;
+        /* The original CSS for .sidebar-link.active, .sidebar-link.selected,
+           .sidebar-link:focus, .sidebar-link:nth-child(3) on mobile also
+           reverted color/font-weight to default. I'm prioritizing the
+           border-bottom active style for mobile, assuming the intention
+           was for the link to visibly be "active". If you strictly want
+           the text to revert to default on mobile for active,
+           you'd need to adjust this here. */
+    }
+    .mainContent {
+        padding-top: 20px; /* Add some space from the horizontal sidebar */
+    }
+    .chatContainer { /* Changed from .content-section */
+        margin-top: 20px; /* Adjust top margin for content sections on mobile */
+    }
+    .chatContent {
+        flex-direction: column; /* Stack chat components vertically on smaller screens */
+    }
+    .patientList {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #2196f3;
+        border-radius: 12px 12px 0 0; /* Adjust border-radius */
+        max-height: 200px; /* Limit height of patient list when stacked */
+    }
+    .patientListHeader {
+        border-radius: 12px 12px 0 0;
+    }
+    .chatArea {
+        border-radius: 0 0 12px 12px; /* Adjust border-radius */
+    }
+    .messages {
+        min-height: 200px; /* Adjust message display height */
+    }
+    .chatInputArea {
+        border-radius: 0 0 12px 12px;
+    }
+    .footerContainer {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0; /* Reset for mobile */
+    }
+    .footerLeft, .footerRight {
+        padding-left: 0;
+        padding-right: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .footerLinks {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,593 @@
+/* --- Global & Layout (Keep these mostly consistent with other pages) --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Changed to a subtle gradient for better visual depth */
+    background: linear-gradient(135deg, #f5f7fa 0%, #e0e6ed 100%);
+    min-height: 100vh;
+    display: flex; /* Use flexbox for body to manage content and footer */
+    flex-direction: column; /* Stack content and footer vertically */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1; /* Allow container to take available space */
+}
+
+.sidebar {
+    width: 120px;
+    background: #e3f2fd;
+    color: #1976d2;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.08);
+    border-right: 2px solid #bbdefb;
+}
+
+.sidebar-item {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: transparent;
+}
+
+.sidebar-item:hover {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar-item .material-icons {
+    font-size: 36px;
+    color: inherit;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* Use a slightly different gradient or solid color if preferred for main content */
+    background: linear-gradient(135deg, #f0f2f5 0%, #e8edf3 100%);
+    min-height: 100vh; /* Ensure it still takes full height */
+}
+
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-left .nav-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+/* --- Footer Styles --- */
+.footer {
+    width: 100%; /* Changed from fixed 1473px to 100% for responsiveness */
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 10;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px; /* To account for the sidebar */
+}
+.footer-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.footer-right {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+.footer-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+.footer-icon .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+.footer-icon .fa-github {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+.footer-icon:hover .material-icons,
+.footer-icon:hover .fa-github {
+    color: #1976d2;
+}
+.footer-support {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+.footer-copyright {
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* --- Personal Info Specific Styles --- */
+h2 {
+    text-align: center;
+    color: #1c2b5a;
+    font-size: 32px;
+    margin-top: 0; /* Adjusted to be controlled by parent padding */
+    margin-bottom: 24px;
+    font-weight: bold;
+}
+
+h3 { /* For the user name when not editing */
+    font-size: 2em; /* Increased size for prominence */
+    color: #2196f3; /* Used a vibrant blue from navbar */
+    margin-top: 20px; /* Add more space below profile picture */
+    margin-bottom: 30px; /* Add more space before info fields */
+    font-weight: bold;
+}
+
+.personal-info-container {
+    padding: 40px 20px; /* Balanced padding */
+    max-width: 800px; /* Optimized max-width for balance */
+    margin: 40px auto; /* Centered with vertical spacing */
+    flex-grow: 1; /* Allows it to expand within main-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center vertically if space allows */
+}
+
+.personal-info-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%); /* Lighter, subtle gradient */
+    border-radius: 25px; /* Slightly more rounded corners */
+    padding: 40px; /* Adjusted padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Softer shadow */
+    width: 550px; /* Take full width of its container */ /* Max width for the card itself */
+    box-sizing: border-box; /* Include padding in width */
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.personal-info-card .profile-pic {
+    width: 160px; /* Slightly larger picture */
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #2196f3; /* Matching brand color */
+    margin-bottom: 35px; /* More space below image */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2); /* Enhanced shadow for pop-out effect */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.personal-info-card .profile-pic:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.info-field {
+    background-color: #f5f5f5; /* Lighter background for info fields */
+    border-radius: 12px; /* Less aggressively rounded, more modern */
+    padding: 12px 25px; /* Adjusted padding */
+    margin-bottom: 18px; /* Consistent margin */
+    width: 90%; /* Wider info fields */
+    color: #333;
+    font-size: 1.1em; /* Slightly smaller font for balance */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Softer inner shadow */
+    border: 1px solid #e0e0e0; /* Add subtle border */
+    gap: 15px; /* Slightly less gap */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.info-field:hover {
+    background-color: #e8f5e9; /* Subtle change on hover */
+    box-shadow: inset 0 2px 7px rgba(0,0,0,0.08);
+}
+
+.info-label {
+    font-weight: bold;
+    text-align: left; /* Align label text to left */
+    min-width: 100px; /* Give labels a fixed width for alignment */
+    color: #424242; /* Slightly darker label color */
+}
+
+/* Input styles for editing mode */
+.info-field input[type="text"],
+.info-field input[type="email"],
+.info-field select {
+    flex-grow: 1; /* Allow input to fill remaining space */
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #a7d9f7; /* Matching a softer blue */
+    font-size: 1em;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.info-field input[type="text"]:focus,
+.info-field input[type="email"]:focus,
+.info-field select:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+/* Styles for name input when editing */
+.personal-info-card input[type="text"][id="name"] {
+    width: auto; /* Let it scale naturally */
+    max-width: 300px; /* Control max width */
+    text-align: center;
+    font-size: 1.8em; /* Match h3 size */
+    font-weight: bold;
+    margin: 10px 0 20px 0; /* Adjust spacing */
+    border-radius: 12px;
+    padding: 8px 15px;
+    color: #2196f3;
+}
+
+/* --- REFINED BUTTON STYLES START HERE --- */
+.personal-info-card .actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjusted gap for better balance */
+    margin-top: 30px; /* Space from info fields above */
+    margin-bottom: 20px; /* Space below actions to separate from logout */
+    width: 100%;
+}
+
+.personal-info-card .btn {
+    padding: 12px 40px; /* Consistent padding */
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    /* NEW: Set a max-width for consistency across main action buttons */
+    max-width: 200px; /* Adjust this value as needed to control button width */
+    width: 100%; /* Ensure it takes full width up to max-width */
+}
+
+.btn.info-edit {
+    background-color: #66bb6a; /* Softer green */
+    color: white;
+    /* This will now inherit the new max-width and padding from .personal-info-card .btn */
+}
+
+.btn.info-edit:hover {
+    background-color: #4caf50; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn.info-save {
+    background-color: #42a5f5; /* Primary blue for save */
+    color: white;
+    /* This will now inherit the new max-width and padding from .personal-info-card .btn */
+}
+
+.btn.info-save:hover {
+    background-color: #2196f3; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn.info-cancel { /* Added specific style for Cancel button */
+    background-color: #ff8a65; /* A warm, inviting orange-red for Cancel */
+    color: white;
+    /* This button will now also inherit the updated padding from .personal-info-card .btn */
+}
+
+.btn.info-cancel:hover {
+    background-color: #ff7043; /* Darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn.logout {
+    background-color: #6c757d; /* A neutral grey for logout, distinct from action buttons */
+    color: white;
+    margin-top: 20px; /* Space from the action buttons above it, managed by .actions' margin-bottom */
+    /* NEW: Ensure this also aligns with the new max-width and consistent padding */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    max-width: 200px; /* Matches the max-width of other buttons for consistency */
+    padding: 12px 40px; /* Consistent padding */
+    border-radius: 25px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.btn.logout:hover {
+    background-color: #5a6268; /* Darker grey on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0,0,0,0.2);
+}
+
+/* General button styles (apply to primary/secondary if used elsewhere) */
+.btn.primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #2a6edc;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn.secondary:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sidebar and main content */
+    }
+    .sidebar {
+        width: 100%; /* Full width sidebar */
+        flex-direction: row; /* Horizontal layout for sidebar items */
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        border-right: none;
+        border-bottom: 2px solid #bbdefb;
+        justify-content: space-around; /* Distribute items evenly */
+    }
+    .sidebar-item {
+        padding: 10px 0;
+    }
+    .main-content {
+        padding-top: 20px; /* Add some space after the sidebar */
+    }
+    .footer-container {
+        padding-left: 20px; /* Remove large left padding */
+        flex-direction: column; /* Stack footer elements */
+        align-items: center;
+        text-align: center;
+    }
+    .footer-left, .footer-right {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        padding-right: 0;
+    }
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+    .footer-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .personal-info-container {
+        padding: 20px 15px; /* Reduced padding on smaller screens */
+        margin: 20px auto;
+    }
+    .personal-info-card {
+        padding: 30px 20px; /* Reduced card padding */
+        border-radius: 15px;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 25px;
+    }
+    h3 {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+    .info-field {
+        font-size: 1em;
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        width: 95%; /* Wider on small screens */
+    }
+    .info-label {
+        min-width: 80px; /* Adjust label width */
+    }
+    .personal-info-card .actions {
+        flex-direction: row; /* Keep them in a row if space allows */
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+    .personal-info-card .btn {
+        padding: 10px 30px; /* Adjusted padding for smaller screens */
+        font-size: 1em;
+        min-width: unset;
+        flex-grow: 1;
+        /* NEW: Also apply max-width for responsiveness to keep buttons consistent */
+        max-width: 180px; /* Example adjustment for smaller screens */
+    }
+    .btn.logout {
+        padding: 10px 30px;
+        /* NEW: Match max-width for consistency on smaller screens */
+        max-width: 180px; /* Example adjustment for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+        width: 100%;
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .navbar-right {
+        margin-top: 15px;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .sidebar {
+        flex-wrap: wrap; /* Allow sidebar items to wrap */
+        justify-content: center;
+    }
+    .sidebar-item {
+        width: 30%; /* Allow 3 items per row approx */
+    }
+    h2 {
+        font-size: 28px;
+    }
+    .personal-info-card {
+        padding: 25px 15px;
+    }
+    .info-field {
+        flex-direction: column; /* Stack label and value */
+        align-items: flex-start;
+        padding: 10px 15px;
+        gap: 5px;
+    }
+    .info-label {
+        width: 100%;
+        text-align: left;
+    }
+    .personal-info-card .actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+    .personal-info-card .btn {
+        width: 100%; /* Full width buttons */
+        max-width: 250px; /* Control max width for better appearance */
+        margin-left: auto; /* Center individual buttons when stacked */
+        margin-right: auto;
+    }
+    .btn.logout {
+        width: 100%;
+        max-width: 250px;
+    }
+}

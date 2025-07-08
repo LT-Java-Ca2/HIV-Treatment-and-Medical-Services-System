@@ -1,7 +1,7 @@
  body {
             font-family: Arial, sans-serif;
             margin: 0;
-             background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
             min-height: 100vh;
         }
          .container {
@@ -10,14 +10,13 @@
     }
     .sidebar {
         width: 120px;
+        flex-shrink: 0;
         background: #e3f2fd;
         color: #1976d2;
-        flex-shrink: 0;
         align-items: center;
         padding-top: 30px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.08);
         border-right: 2px solid #bbdefb;
-        margin-left: -175px;
     }
 
     .sidebar-item {
@@ -30,37 +29,26 @@
     }
 
     .sidebar-item:hover {
-        color: #2f00ff !important;
-            padding: 10px 20px;
-            border-radius: 20px;
-            transform: scale(1.1);
+        background: #bbdefb;
+        color: #1565c0;
     }
 
     .sidebar-item .material-icons {
         font-size: 36px;
         color: inherit;
     }
-    
+
     .sidebar-item a {
         text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, transform 0.3s ease;
-            font-size: 18px;
-            padding: 8px 0;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            display: inline-block;
+        color: inherit;
     }
-
+    
     .main-content {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
         min-height: 100vh;
-        margin-left: 150px;
     }
 
     .navbar {
@@ -87,43 +75,28 @@
         display: inline-block;
     }
 
-     .nav-links a {
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, transform 0.3s ease;
-            font-size: 18px;
-            padding: 8px 0;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            display: inline-block;
-        }
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-size: 19px;
+    }
 
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(254, 115, 156);
-            border-radius: 20px;
-            z-index: -1;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
+    .nav-links li {
+        margin-left: 40px; 
+    }
 
-        .nav-links a:hover {
-            color: #ddff00 !important;
-            padding: 10px 20px;
-            border-radius: 20px;
-            transform: scale(1.1);
-        }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600; 
+        transition: color 0.3s ease;
+    }
 
-        .nav-links a:hover::before {
-            transform: translateX(0);
-        }
+    .nav-links a:hover {
+        color: #e0e0e0;
+    }
 
     .navbar-right {
         display: flex;
@@ -242,74 +215,116 @@
         white-space: nowrap;
         margin-left: 0;
     }
-        /* Blog content styles */
-         h2 {
+        /* Form styles */
+       h2 {
       text-align: center;
       color: #1c2b5a;
       font-size: 32px;
-      margin-top: 45px;
-      margin-bottom: 24px;
+      margin-top: 20px;
+      margin-bottom: 30px;
     }
-        .post {
-            background: white;
-            border-radius: 12px;
-            margin: 20px auto;
-            max-width: 700px;
-            padding: 20px 24px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-left: 6px solid #c3d3f5;
-            transition: ease-in-out 0.3s;
-        }
-
-        .post:hover {
-            scale: 1.02;
-            cursor: pointer;
-            transition: ease-in-out 0.3s;
-        }
-
-        .post-header {
+        .doc-profile-card {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b3e0ff 100%);
+            border-radius: 20px;
+            padding: 40px 40px 30px 40px;
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 10px;
         }
-        .avatar {
-            background-color: #5b68cd;
-            color: white;
+        .doc-section-title {
+            color: #1976d2;
+            font-size: 1.3em;
             font-weight: bold;
-            font-size: 18px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+        .card-list {
             display: flex;
+            gap: 32px;
             justify-content: center;
-            align-items: center;
-            margin-right: 10px;
+            width: 100%;
+            margin-top: 10px;
         }
-        .author-date {
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(33, 150, 243, 0.10);
+            width: 270px;
             display: flex;
+            flex-direction: column;
             align-items: center;
+            overflow: hidden;
+            margin-bottom: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            flex-shrink: 0;
+            height: 450px;
         }
-        .author-name {
-            font-weight: bold;
-            font-size: 16px;
+        .card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(33, 150, 243, 0.18);
         }
-        .date {
-            font-size: 13px;
-            color: gray;
+        .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
         }
-        .post-title {
-            color: #1c2b5a;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 5px 0 10px;
+        .card-content {
+            padding: 18px 18px 20px 18px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 220px;
+            justify-content: flex-end;
         }
-        .post-content {
-            font-size: 17px;
-            color: #333;
-            line-height: 1.6;
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a237e;
         }
-        .post-title a {
-            text-decoration: none;
-            color: #2d4fc4;
+        .card-desc {
+            font-size: 15px;
+            padding: 10px 20px;
+            margin-top: 0px;
+        }
+        .card-btn {
+            background: #2635c7;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: flex-start;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .card-btn:hover {
+            background: #1a237e;
+        }
+        @media (max-width: 1200px) {
+            .card-list {
+                gap: 18px;
+            }
+        }
+        @media (max-width: 900px) {
+            .doc-profile-card {
+                padding: 18px 8px;
+            }
+            .card-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90vw;
+                min-width: 260px;
+            }
         }

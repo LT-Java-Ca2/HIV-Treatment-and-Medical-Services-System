@@ -1,0 +1,510 @@
+.mu-main-navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    border-bottom: none;
+    height: auto;
+}
+
+
+.mu-navbar-brand-name {
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+    margin: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mu-navbar-brand-name:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(33,150,243,0.2);
+}
+
+.mu-navbar-nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+    gap: 40px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: -200px;
+}
+
+.mu-navbar-nav-links li {
+    margin-left: 0;
+}
+
+.mu-navbar-nav-links a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, transform 0.3s ease;
+    font-size: 20px;
+    padding: 8px 0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-block;
+}
+
+.mu-navbar-nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(254, 115, 156);
+    border-radius: 20px;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mu-navbar-nav-links a:hover {
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transform: scale(1.1);
+}
+
+.mu-navbar-nav-links a:hover::before {
+    transform: translateX(0);
+}
+
+.mu-page-main-title {
+    text-align: center;
+    margin: 32px 0 24px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+.mu-data-section {
+    margin: 0 auto 24px auto;
+    max-width: 1100px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.07);
+    padding: 18px 24px 24px 24px;
+}
+
+.mu-section-header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-left: 2px;
+    border-bottom: 2px solid rgba(229, 57, 53, 0.2);
+    padding-bottom: 10px;
+}
+
+.mu-section-heading {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0;
+    color: #e53935;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.mu-action-add-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-end;
+    width: 135px;
+    margin-top: -35px;
+    margin-left: 900px;
+}
+
+.mu-action-add-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.mu-action-add-btn .material-icons {
+    font-size: 1.2em;
+}
+
+.mu-section-heading.red,
+.mu-section-heading.orange,
+.mu-section-heading.blue,
+.mu-section-heading.pink {
+    color: #e53935;
+    border-bottom: none;
+}
+
+.mu-data-table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.07);
+    border: 1.5px solid #b3c6e0;
+    min-width: 700px;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    font-size: 15px;
+    background: #fff;
+}
+
+th {
+    background: #e3f2fd;
+    font-weight: 700;
+    color: #333;
+    border-top: 1.5px solid #b3c6e0;
+    text-align: center;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr td:last-child, tr th:last-child {
+    border-right: none;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease;
+}
+
+table thead tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+table thead tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.mu-table-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.mu-table-action-buttons .material-icons {
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mu-table-action-buttons .mu-table-edit-icon {
+    color: #2196f3;
+}
+
+.mu-table-action-buttons .mu-table-delete-icon {
+    color: #f44336;
+}
+
+.mu-table-action-buttons .material-icons:hover {
+    transform: scale(1.2);
+}
+
+.mu-overview-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mu-stat-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.mu-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.mu-card-heading {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.mu-card-value {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2196f3;
+    margin-bottom: 5px;
+}
+
+.mu-card-description-text {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.mu-main-footer {
+     width: 100%;
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+}
+
+.mu-footer-content-container {
+     width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px;
+}
+
+.mu-footer-brand-info {
+     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+
+.mu-footer-logo-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.mu-footer-contact-links {
+     flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.mu-footer-social-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.mu-social-icon-link .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    margin-right: 15px;
+}
+
+.mu-social-icon-link .fa-github {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+}
+
+.mu-social-icon-link:hover .material-icons,
+.mu-social-icon-link:hover .fa-github {
+    color: #1976d2;
+    transform: scale(1.2);
+}
+
+.mu-footer-support-email {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.mu-footer-copyright-text {
+     text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+.mu-app-modal {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mu-modal-content-box {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.mu-modal-close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mu-modal-close-btn:hover,
+.mu-modal-close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mu-modal-content-box h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.mu-modal-content-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.mu-modal-content-box input[type="text"],
+.mu-modal-content-box input[type="tel"],
+.mu-modal-content-box input[type="date"],
+.mu-modal-content-box select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.mu-modal-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mu-modal-action-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.mu-modal-action-buttons .mu-modal-submit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.mu-modal-action-buttons .mu-modal-submit-btn:hover {
+    background-color: #218838;
+}
+
+.mu-modal-action-buttons .mu-modal-cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.mu-modal-action-buttons .mu-modal-cancel-btn:hover {
+    background-color: #c82333;
+}

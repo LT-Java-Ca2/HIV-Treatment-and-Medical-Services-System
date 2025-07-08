@@ -1,0 +1,425 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 120px;
+    background: #e3f2fd;
+    color: #1976d2;
+    flex-shrink: 0;
+    display: flex; /* Thêm display flex để align-items có tác dụng */
+    flex-direction: column; /* Thêm để xếp dọc */
+    align-items: center;
+    padding-top: 30px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.08);
+    border-right: 2px solid #bbdefb;
+}
+
+.sidebar-item {
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    background: transparent;
+}
+
+.sidebar-item:hover {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+.sidebar-item .material-icons {
+    font-size: 36px;
+    color: inherit;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Thêm để toàn bộ khu vực là link */
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+    min-height: 100vh;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-left .nav-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.footer {
+    width: 100%;
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+
+.footer-logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-right {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.footer-icon .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.footer-icon .fa-github {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-icon:hover .material-icons,
+.footer-icon:hover .fa-github {
+    color: #1976d2;
+}
+
+.footer-support {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.footer-copyright {
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* Main Content Styles */
+h2 {
+    text-align: center;
+    color: #1c2b5a;
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+
+.profile-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    max-width: 700px; /* Vẫn giữ nguyên chiều rộng này */
+    margin: 50px auto 0 auto; /* Đã điều chỉnh margin-top từ 50px */
+    width: 100%;
+    /* background và box-shadow của profile-container sẽ được thay thế bằng result-profile-card nếu bạn muốn chỉ có card đó có nền */
+    /* Nếu bạn muốn toàn bộ khu vực chính có nền và shadow, hãy giữ lại ở đây */
+    background: linear-gradient(135deg, #e0f7fa 0%, #b3e0ff 100%); /* Giữ nền cho profile-container */
+    border-radius: 20px;
+    padding: 40px; /* Padding cho toàn bộ container */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Shadow cho toàn bộ container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Updated styles for the image below the H2 and above the result card */
+.results-image-banner {
+    width: 180px; /* Đặt kích thước cố định cho hình tròn */
+    height: 180px; /* Đặt kích thước cố định cho hình tròn */
+    border-radius: 50%; /* Quan trọng: Biến hình vuông thành hình tròn */
+    overflow: hidden; /* Cắt bỏ phần thừa của ảnh nếu không phải hình vuông */
+    margin: 0 auto 30px auto; /* Căn giữa và thêm khoảng cách dưới */
+    display: block; /* Đảm bảo nó là block để margin: auto hoạt động */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Thêm shadow cho ảnh */
+    border: 4px solid #2196f3; /* Thêm viền xanh */
+}
+
+.full-width-image-banner {
+    width: 100%; /* Ảnh sẽ lấp đầy khu vực hình tròn */
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo và lấp đầy hình tròn */
+    display: block;
+}
+
+
+/* Result Profile Card */
+.result-profile-card {
+    background: #fff; /* Nền trắng cho card thông tin bệnh nhân */
+    border-radius: 20px;
+    padding: 40px 40px 30px 40px;
+    width: 100%; /* Chiếm toàn bộ chiều rộng của .profile-container */
+    box-shadow: 0 5px 15px rgba(33,150,243,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    /* margin-top: 30px; */ /* Bỏ margin-top ở đây vì đã có margin-bottom từ ảnh */
+}
+
+.result-profile-card h3 {
+    color: #1976d2;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.result-section-content {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.result-section-content label {
+    color: #333;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.result-section-content span {
+    color: #000000;
+    margin-left: 8px;
+}
+
+.result-row {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    margin-top: 10px;
+    height: 60px;
+    justify-content: center;
+}
+
+.result-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #d9d9d9;
+    border-radius: 18px;
+    padding: 18px 24px;
+    font-size: 1.1em;
+    color: #222;
+    font-weight: 500;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.result-label {
+    flex: 1;
+    text-align: left;
+}
+
+.result-checkbox {
+    width: 28px;
+    height: 28px;
+    margin-left: 18px;
+    border-radius: 8px; /* Giữ nguyên border-radius nếu bạn muốn checkbox vuông */
+    border: 2px solid #bbb;
+    background: #ffffff;
+    appearance: none;
+    outline: none;
+    cursor: default; /* Vẫn không cho phép click */
+    display: inline-block;
+    vertical-align: middle;
+    transition: border 0.2s;
+}
+
+.result-checkbox:checked {
+    background-color: #fffb00;
+    border-color: #fffb00;
+    position: relative;
+}
+
+.result-checkbox:checked::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 8px;
+    height: 16px;
+    border: solid #ff0000;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .result-section-content {
+        flex-direction: column; /* Stack columns on smaller screens */
+        gap: 10px;
+    }
+
+    .result-row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .footer-right {
+        align-items: center;
+        padding-right: 0;
+        margin-top: 15px;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,635 @@
+/* General Body Styles */
+.body { /* Note: 'body' is a global selector, often best left in a global CSS file or handled differently in React */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #e3f2fd 60%, #e6e6fa 100%);
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+    border-bottom: none;
+    height: auto;
+}
+
+.navbarLeft .navBrand, .navBrand {
+    font-weight: bold;
+    font-size: 1.5em;
+    background: rgba(255,255,255,0.18);
+    padding: 10px 28px;
+    border-radius: 30px;
+    color: white;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+    display: inline-block;
+    margin: 0;
+}
+
+.navLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 19px;
+    gap: 40px;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLinks li {
+    margin-left: 0;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 18px;
+    padding: 8px 0;
+    border-radius: 4px;
+}
+
+.navLinks a:hover {
+    color: #e0e0e0;
+    background: none;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.navbarRight .material-icons {
+    font-size: 28px;
+    margin-left: 15px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Main Container and Sidebar Styles */
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 320px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    justify-content: flex-start;
+}
+
+.sidebarMenuBox {
+    width: 70%;
+    background: #fff;
+    border-radius: 20px;
+    margin: 32px 0 0 0;
+    box-shadow: 0 8px 32px rgba(33,150,243,0.13);
+    overflow: hidden;
+}
+
+.sidebarTitle {
+    background: #9c27b0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    padding: 22px 0 18px 0;
+    letter-spacing: 1px;
+    border-radius: 20px 20px 0 0;
+}
+
+.sidebarMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+}
+
+.sidebarLink {
+    width: 100%;
+    margin: 0;
+    padding: 20px 0 20px 32px;
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: none;
+    border-bottom: 1px solid #f0f0f0;
+    text-decoration: none;
+}
+
+.sidebarLink:last-child {
+    border-bottom: none;
+}
+
+.sidebarLink.active,
+.sidebarLink.selected,
+.sidebarLink:focus {
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+}
+
+.sidebarLink:hover {
+    background: #f5f5f5;
+    color: #1976d2;
+    font-weight: bold;
+}
+
+/* Content Area Styles */
+.content {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+}
+
+.contentHeader {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 20px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.pageTitle { /* Renamed from .page-title for consistency with CSS Modules naming */
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.searchFilters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filterLabel {
+    font-size: 17px;
+    color: #666;
+    font-weight: 500;
+}
+
+.filterInput, .filterSelect {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+}
+
+.filterInput:focus, .filterSelect:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
+.addPatientBtn {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.addPatientBtn:hover {
+    background: #1976d2;
+}
+
+/* Table Styles */
+.tableContainer {
+    padding: 20px;
+}
+
+.patientTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tableHeader {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+.tableHeader th {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 17px;
+    text-align: left;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    background-color: #1976d2;
+}
+
+.tableHeader th:last-child {
+    border-right: none;
+}
+
+.tableRow {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.3s;
+}
+
+.tableRow:hover {
+    background: #f8f9fa;
+}
+
+.tableRow:last-child {
+    border-bottom: none;
+}
+
+.tableCell {
+    padding: 15px 12px;
+    font-size: 16px;
+    color: #333;
+    border-right: 1px solid #f0f0f0;
+}
+
+.tableCell:last-child {
+    border-right: none;
+}
+
+/* Action Buttons */
+.actionButtons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.actionBtn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.editBtn {
+    background: #4caf50;
+    color: white;
+}
+
+.editBtn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+.deleteBtn {
+    background: #f44336;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background: #da190b;
+    transform: translateY(-1px);
+}
+
+.viewBtn {
+    background: #ff9800;
+    color: white;
+}
+
+.viewBtn:hover {
+    background: #f57c00;
+    transform: translateY(-1px);
+}
+
+/* Status Colors */
+.statusActive {
+    color: #4caf50;
+    font-weight: 500;
+}
+
+.statusInactive {
+    color: #666;
+}
+
+.statusCompleted {
+    color: #2196f3;
+    font-weight: 500;
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background: #85c1ee;
+    color: #000;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    padding: 15px 20px;
+}
+
+.footerContainer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 120px;
+}
+
+.footerLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 100%;
+}
+
+.footerLogo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.footerRight {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+    padding-right: 48px;
+    height: 100%;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.footerLinks {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.footerIcon .material-icons {
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.footerIcon .fa-github { /* This targets the icon directly, not through CSS modules */
+    font-size: 1.7em;
+    color: #000;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border-radius: 50%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footerIcon:hover .material-icons,
+.footerIcon:hover .fa-github {
+    color: #1976d2;
+}
+
+.footerSupport {
+    color: #000;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.footerCopyright {
+    text-align: right;
+    color: #000;
+    font-size: 1em;
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: 0;
+    white-space: nowrap;
+    margin-left: 0;
+}
+
+/* Heading for Content */
+h2 { /* Note: 'h2' is a global selector. In CSS Modules, it's often preferred to make it a class if you only want it to apply to this component. */
+    text-align: center;
+    color: #1c2b5a;
+    font-size: 32px;
+    margin-top: 45px;
+    margin-bottom: 24px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Will be toggled by React state */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.closeButton {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalContent h3 { /* Another global tag selector within a module */
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="date"],
+.formGroup textarea,
+.formGroup select {
+    width: calc(100% - 24px); /* Adjust for padding */
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.formActions {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.formActions button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    margin: 0 10px;
+}
+
+.formActions .saveBtn {
+    background-color: #2196f3;
+    color: white;
+}
+
+.formActions .saveBtn:hover {
+    background-color: #1976d2;
+    transform: translateY(-1px);
+}
+
+.formActions .cancelBtn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.formActions .cancelBtn:hover {
+    background-color: #bbb;
+    transform: translateY(-1px);
+}
+
+/* View Patient Modal Styles */
+.viewModalContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.viewModalContent h3 { /* Another global tag selector within a module */
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.viewDetailGroup {
+    margin-bottom: 10px;
+}
+
+.viewDetailGroup strong {
+    display: inline-block;
+    width: 120px; /* Align labels */
+    color: #555;
+}
+
+.viewDetailGroup span {
+    color: #333;
+}

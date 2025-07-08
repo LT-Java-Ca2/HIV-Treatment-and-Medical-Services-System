@@ -1,0 +1,376 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            width: 120px;
+            background: #e3f2fd;
+            color: #1976d2;
+            flex-shrink: 0;
+            align-items: center;
+            padding-top: 30px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.08);
+            border-right: 2px solid #bbdefb;
+        }
+        .sidebar-item {
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+            background: transparent;
+        }
+        .sidebar-item:hover, .sidebar-item.active {
+            background: #bbdefb;
+            color: #1565c0;
+        }
+        .sidebar-item .material-icons {
+            font-size: 36px;
+            color: inherit;
+        }
+
+        .sidebar-item a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #b3e0ff 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #2196f3, #1976d2);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .navbar-left .nav-brand {
+            font-weight: bold;
+            font-size: 1.5em;
+            background: rgba(255,255,255,0.18);
+            padding: 10px 28px;
+            border-radius: 30px;
+            color: white;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            display: inline-block;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-size: 19px;
+        }
+        .nav-links li {
+            margin-left: 40px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #e0e0e0;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-right .material-icons {
+            font-size: 28px;
+            margin-left: 15px;
+            cursor: pointer;
+            color: white;
+        }
+        h2 {
+            text-align: center;
+            color: #1c2b5a;
+            font-size: 32px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        .reminder-profile-card {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b3e0ff 100%);
+            border-radius: 20px;
+            padding: 40px 40px 30px 40px;
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .reminder-section-title {
+            color: #1976d2;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+        .reminder-list {
+            font-size: 1.1em;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 100%;
+        }
+        .reminder-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .reminder-icon {
+            font-size: 2em;
+            color: #1976d2;
+            margin-right: 12px;
+        }
+        .reminder-content {
+            flex: 1;
+        }
+        .reminder-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .reminder-subtitle {
+            font-size: 0.95em;
+            color: #444;
+        }
+        .reminder-time {
+            font-size: 1em;
+            font-weight: bold;
+            color: #e74c3c;
+            white-space: nowrap;
+        }
+        .medicine-section {
+            margin-top: 40px;
+        }
+        @media (max-width: 900px) {
+            .reminder-profile-card {
+                padding: 18px 8px;
+            }
+        }
+        .footer {
+            width: 100%;
+            background: #85c1ee;
+            color: #000;
+            display: flex;
+            align-items: center;
+            border: none;
+            padding: 0;
+            position: relative;
+            z-index: 10;
+            padding: 15px 20px;
+        }
+        .footer-container {
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            box-sizing: border-box;
+            padding-left: 120px;
+        }
+        .footer-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 0;
+            height: 100%;
+        }
+        .footer-logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: 2px;
+            text-align: left;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .footer-right {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            text-align: right;
+            padding-right: 48px;
+            height: 100%;
+            justify-content: center;
+            margin-top: 0;
+        }
+        .footer-links {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 0;
+            justify-content: flex-end;
+            margin-top: 0;
+        }
+        .footer-icon .material-icons {
+            font-size: 1.7em;
+            color: #000;
+            transition: color 0.2s;
+            cursor: pointer;
+            background: none;
+            border-radius: 50%;
+            line-height: 1;
+        }
+        .footer-icon .fa-github {
+            font-size: 1.7em;
+            color: #000;
+            transition: color 0.2s;
+            cursor: pointer;
+            background: none;
+            border-radius: 50%;
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .footer-icon:hover .material-icons,
+        .footer-icon:hover .fa-github {
+            color: #1976d2;
+        }
+        .footer-support {
+            color: #000;
+            font-size: 1em;
+            text-align: right;
+            margin-bottom: 0;
+            line-height: 1;
+            margin-top: 0;
+            white-space: nowrap;
+        }
+        .footer-copyright {
+            text-align: right;
+            color: #000;
+            font-size: 1em;
+            margin-bottom: 0;
+            line-height: 1;
+            margin-top: 0;
+            white-space: nowrap;
+            margin-left: 0;
+        }
+        .content-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1c2b5a;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .section-title {
+            color: #1976d2;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+            width: 100%;
+            text-align: left;
+        }
+        .appointment-card, .medicine-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 18px;
+            font-size: 1.25em;
+            position: relative;
+        }
+        .appointment-time, .medicine-time {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+            white-space: nowrap;
+            min-width: 210px;
+            text-align: right;
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .appointment-content, .medicine-content {
+            padding-right: 230px; /* chừa chỗ cho thời gian */
+        }
+        .appointment-icon i, .medicine-icon i {
+            font-size: 40px; /* icon bằng đúng cỡ chữ nội dung */
+        }
+        .appointment-icon, .medicine-icon {
+            margin-right: 16px;
+            color: #1976d2;
+            /* bỏ font-size ở đây để dùng cho thẻ i bên trong */
+        }
+        .appointment-title {
+            font-size: 18px; /* tăng cỡ chữ */
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .appointment-subtitle {
+            font-size: 16px; /* tăng cỡ chữ */
+            color: #444;
+        }
+        .appointment-time {
+            font-size: 18px; /* tăng cỡ chữ */
+            font-weight: bold;
+            color: #e74c3c;
+            white-space: nowrap;
+            margin-left: 50px;
+        }
+        .medicine-title {
+            font-size: 18px; /* tăng cỡ chữ */
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 2px;
+        }
+        .medicine-subtitle {
+            font-size: 16px; /* tăng cỡ chữ */
+            color: #444;
+        }
+        .medicine-time {
+            font-size: 18px; /* tăng cỡ chữ */
+            font-weight: bold;
+            color: #e74c3c;
+            white-space: nowrap;
+        }
